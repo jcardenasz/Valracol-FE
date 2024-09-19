@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node_modules/.bin/next dev",
-    "build": "node_modules/.bin/next build",
-    "start": "node_modules/.bin/next start",
-    "lint": "node_modules/.bin/next lint"
+    "dev": "npx next dev -p 8000",
+    "build": "npx next build",
+    "start": "npx next start -p 8000",
+    "lint": "npx eslint ."
   },
   "dependencies": {
     "@eslint/config-array": "^0.18.0",
