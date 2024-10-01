@@ -1,0 +1,8 @@
+.navbar-link_text{
+    color: white;
+}
+
+.navbar-link_text:hover{
+    color: #e76d6d !important;
+    transition: color 0.2s ease-in-out;
+}
