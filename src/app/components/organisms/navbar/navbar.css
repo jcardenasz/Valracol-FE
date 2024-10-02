@@ -1,8 +1,37 @@
-.navbar-link_text{
-    color: white;
+/* navbar.css */
+.navbar-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar-link_text:hover{
-    color: #e76d6d !important;
+.navbar-link_text {
+    color: white;
+    position: relative;
     transition: color 0.2s ease-in-out;
+}
+
+.navbar-link_text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e76d6d;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-link_text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-link_text:hover {
+    color: #e76d6d !important;
 }

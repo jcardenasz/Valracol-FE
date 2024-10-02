@@ -18,6 +18,9 @@ const config: Config = {
                 foreground: "var(--foreground)",
                 'valracol-red': '#8e2222',
                 'valracol-dark': '#280a0a',
+                'valracol-blue': '#003b5c',
+                'valracol-footer-red': '#441010',
+                'valracol-letter-hover': '#e76d6d'
             },
         },
     },

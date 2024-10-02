@@ -25,6 +25,30 @@ export default function Home() {
                 </section>
 
                 <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Visión</h2>
+                    <p className="text-lg">
+                        Nuestra visión es ser líderes en el mercado, reconocidos por nuestra excelencia y compromiso con
+                        la satisfacción del cliente.
+                    </p>
+                </section>
+
+                <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Visión</h2>
+                    <p className="text-lg">
+                        Nuestra visión es ser líderes en el mercado, reconocidos por nuestra excelencia y compromiso con
+                        la satisfacción del cliente.
+                    </p>
+                </section>
+
+                <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Visión</h2>
+                    <p className="text-lg">
+                        Nuestra visión es ser líderes en el mercado, reconocidos por nuestra excelencia y compromiso con
+                        la satisfacción del cliente.
+                    </p>
+                </section>
+
+                <section className="mb-8">
                     <h2 className="text-2xl font-semibold mb-4">Quiénes Somos</h2>
                     <p className="text-lg">
                         Somos un equipo de profesionales dedicados a ofrecer productos y servicios de alta calidad,
