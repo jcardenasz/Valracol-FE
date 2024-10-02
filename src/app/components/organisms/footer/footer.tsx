@@ -4,11 +4,11 @@ import "./footer.css"; // Import the CSS file
 
 export function FooterComponent() {
     return (
-        <Footer container className="bg-gradient-to-b from-valracol-footer-red to-neutral-950">
-            <div className="w-full text-center">
-                <div className="w-full flex justify-between items-center">
-                    <div className="flex-1 flex flex-col justify-center items-center transition ease-in-out hover:scale-110">
-                        <img src="/logoValracol.png" className="h-16 sm:h-20" alt="Logo Valracol"/>
+        <Footer container className="h-32 bg-gradient-to-b from-valracol-footer-red to-neutral-950">
+            <div className="h-20 w-full text-center">
+                <div className="h-full w-full flex justify-between items-center">
+                    <div className="h-full flex-1 flex flex-col justify-center items-center transition ease-in-out hover:scale-110">
+                        <img src="/logoValracol.webp" className="h-16 sm:h-20" alt="Logo Valracol"/>
                         <span className="self-center whitespace-nowrap text-lg sm:text-2xl font-bold dark:text-white">VALRACOL</span>
                     </div>
                     <div className="vl"/> {/* Vertical line */}

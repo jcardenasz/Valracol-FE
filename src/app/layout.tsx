@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavbarComponent from "@/app/components/organisms/navbar/navbar";
 import FooterComponent from "@/app/components/organisms/footer/footer";
+import React from "react";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -27,18 +28,19 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
-                <meta charSet="utf-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/logoValracol.png"/>
-            </head>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
-            <NavbarComponent/>
+        <head>
+            <meta charSet="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="icon" href="/logoValracol.png"/>
+            <title className="text-2xl font-bold dark:text-white"></title>
+        </head>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+        <NavbarComponent/>
+        <main className="flex-grow">
             {children}
-            <FooterComponent/>
-            </body>
+        </main>
+        <FooterComponent/>
+        </body>
         </html>
     );
 }
