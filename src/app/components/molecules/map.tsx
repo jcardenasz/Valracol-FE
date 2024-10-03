@@ -1,6 +1,7 @@
-"use client"
-
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+"use client";
+import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { LatLngExpression, LatLngTuple } from 'leaflet';
 
 import "leaflet/dist/leaflet.css";
@@ -8,16 +9,24 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 
 interface MapProps {
-    posix: LatLngExpression | LatLngTuple,
-    zoom?: number,
+    posix: LatLngExpression | LatLngTuple;
+    zoom?: number;
 }
 
 const defaults = {
     zoom: 16,
-}
+};
 
-const Map = (Map: MapProps) => {
-    const { zoom = defaults.zoom, posix } = Map
+const Map: React.FC<MapProps> = ({ posix, zoom = defaults.zoom }) => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    if (!isClient) {
+        return null;
+    }
 
     return (
         <MapContainer
@@ -34,7 +43,7 @@ const Map = (Map: MapProps) => {
                 <Popup>Valracol, Yopal</Popup>
             </Marker>
         </MapContainer>
-    )
-}
+    );
+};
 
-export default Map;
+export default dynamic(() => Promise.resolve(Map), { ssr: false });

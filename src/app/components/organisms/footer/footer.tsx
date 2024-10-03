@@ -16,7 +16,7 @@ export function FooterComponent() {
                         <FooterLinkGroup className="flex justify-center items-center w-full">
                             <FooterLink className="FooterLink-text text-sm sm:text-base text-center" href="#">Sobre nosotros</FooterLink>
                             <FooterLink className="FooterLink-text text-sm sm:text-base text-center" href="#">Catálogo</FooterLink>
-                            <FooterLink className="FooterLink-text-con text-sm sm:text-base text-center" href="#"> ✆ Contáctenos</FooterLink>
+                            <FooterLink className="FooterLink-text-con text-sm sm:text-base text-center" href={"https://wa.me/+57"+process.env.WACONTACT} target="_blank"> ✆ Contáctenos</FooterLink>
                         </FooterLinkGroup>
                     </div>
                     <div className="vl"/> {/* Vertical line */}
