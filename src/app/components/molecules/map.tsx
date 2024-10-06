@@ -1,49 +1,67 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { LatLngExpression, LatLngTuple } from 'leaflet';
+import React, { useEffect } from 'react';
+import 'ol/ol.css';
+import Map from 'ol/Map';
+import View from 'ol/View.js';
+import TileLayer from 'ol/layer/Tile';
+import XYZ from 'ol/source/XYZ.js';
+import { fromLonLat } from 'ol/proj';
+import { Point } from 'ol/geom';
+import VectorLayer from 'ol/layer/Vector';
+import VectorSource from 'ol/source/Vector';
+import { Feature } from 'ol';
+import { Icon, Style } from 'ol/style';
 
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-import "leaflet-defaulticon-compatibility";
-
-interface MapProps {
-    posix: LatLngExpression | LatLngTuple;
-    zoom?: number;
-}
-
-const defaults = {
-    zoom: 16,
-};
-
-const Map: React.FC<MapProps> = ({ posix, zoom = defaults.zoom }) => {
-    const [isClient, setIsClient] = useState(false);
-
+const MapComponent: React.FC = () => {
     useEffect(() => {
-        setIsClient(true);
+        // Coordinates of Yopal, Colombia
+        const coordinates = fromLonLat([-72.39550987683344, 5.3361664710329]);
+
+        //const point = new Point(add(coordinates,[0,5]));
+        const point = new Point(coordinates);
+        const feature = new Feature(point);
+
+        // Create a style with an icon
+        const iconStyle = new Style({
+            image: new Icon({
+                src: '/location-pointer.png',
+                scale: 0.046, // Adjust the scale as needed
+            }),
+        });
+
+        feature.setStyle(iconStyle);
+
+        // Initialize the map
+        const map = new Map({
+            target: 'map',
+            layers: [
+                new TileLayer({
+                    source: new XYZ({
+                        url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    }),
+                }),
+                new VectorLayer({
+                    source: new VectorSource({
+                        features: [feature],
+                    }),
+                }),
+            ],
+            view: new View({
+                center: coordinates,
+                zoom: 15,
+            }),
+        });
+
+        // Cleanup on component unmount
+        return () => {
+            map.setTarget(undefined);
+        };
     }, []);
 
-    if (!isClient) {
-        return null;
-    }
-
     return (
-        <MapContainer
-            center={posix}
-            zoom={zoom}
-            scrollWheelZoom={true}
-            style={{ height: "100%", width: "100%" }}
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={posix} draggable={false}>
-                <Popup>Valracol, Yopal</Popup>
-            </Marker>
-        </MapContainer>
+        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <div id="map" style={{ width: '100%', height: '100%' }}></div>
+        </div>
     );
 };
 
-export default dynamic(() => Promise.resolve(Map), { ssr: false });
+export default MapComponent;

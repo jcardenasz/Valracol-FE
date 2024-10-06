@@ -1,4 +1,4 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavbarComponent from "@/app/components/organisms/navbar/navbar";
@@ -22,25 +22,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+    children
+}: {
+    children: React.ReactNode
+}) {
     return (
         <html lang="en">
-        <head>
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <link rel="icon" href="/logoValracol.png"/>
-            <title className="text-2xl font-bold dark:text-white"></title>
-        </head>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
-        <NavbarComponent/>
-        <main className="flex-grow">
-            {children}
-        </main>
-        <FooterComponent/>
-        </body>
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/logoValracol.png" />
+                <title>Valracol - Página web</title>
+            </head>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+                <NavbarComponent />
+                <main className="flex-grow">
+                    {children}
+                </main>
+                <FooterComponent />
+            </body>
         </html>
     );
 }
