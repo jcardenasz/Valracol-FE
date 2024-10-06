@@ -10,27 +10,24 @@ import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import { Feature } from 'ol';
 import { Icon, Style } from 'ol/style';
+import './map.css';
 
 const MapComponent: React.FC = () => {
     useEffect(() => {
-        // Coordinates of Yopal, Colombia
         const coordinates = fromLonLat([-72.39550987683344, 5.3361664710329]);
 
-        //const point = new Point(add(coordinates,[0,5]));
         const point = new Point(coordinates);
         const feature = new Feature(point);
 
-        // Create a style with an icon
         const iconStyle = new Style({
             image: new Icon({
                 src: '/location-pointer.png',
-                scale: 0.046, // Adjust the scale as needed
+                scale: 0.046,
             }),
         });
 
         feature.setStyle(iconStyle);
 
-        // Initialize the map
         const map = new Map({
             target: 'map',
             layers: [
@@ -47,19 +44,18 @@ const MapComponent: React.FC = () => {
             ],
             view: new View({
                 center: coordinates,
-                zoom: 15,
+                zoom: 16.5,
             }),
         });
 
-        // Cleanup on component unmount
         return () => {
             map.setTarget(undefined);
         };
     }, []);
 
     return (
-        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-            <div id="map" style={{ width: '100%', height: '100%' }}></div>
+        <div className="map-container">
+            <div id="map" className="map"></div>
         </div>
     );
 };

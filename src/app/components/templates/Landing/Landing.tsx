@@ -3,7 +3,7 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 // Dynamically load the MapComponent without SSR
-const MapComponent = dynamic(() => import('@/app/components/molecules/map'), { ssr: false });
+const MapComponent = dynamic(() => import('@/app/components/molecules/map/map'), { ssr: false });
 
 export function Landing() {
     return (
