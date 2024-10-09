@@ -14,7 +14,7 @@ const SocialNetworks: React.FC<SocialNetworksProps> = () => {
                 alt={'Facebook logo'}>
             </SocialNetworkButton>
             <SocialNetworkButton
-                href={'https://www.instagram.com'}
+                href={`${process.env.INSTAGRAMCONTACT}`}
                 icon={<AiFillInstagram className="text-xl sm:text-4xl hover:text-valracol-letter-hover transition ease-in-out hover:-translate-y-1 hover:scale-110 " />}
                 alt={'Instagram logo'}>
             </SocialNetworkButton>

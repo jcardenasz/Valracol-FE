@@ -2,9 +2,16 @@ import { Transition } from "@/app/components/atoms/transition/transition";
 import React from "react";
 import dynamic from 'next/dynamic';
 
-// Dynamically load the MapComponent without SSR
-const MapComponent = dynamic(() => import('@/app/components/molecules/map/map'), { ssr: false });
+const CarouselComponent = dynamic(() => import('@/app/components/atoms/carrousel/carouselComponent'), { ssr: false });
 
+const MapComponent = dynamic(() => import('@/app/components/molecules/map/map'), { ssr: false });
+const img = [
+    "/images/valvulas.webp",
+    "/images/valvulas.webp",
+    "/images/valvulas.webp",
+    "/images/valvulas.webp",
+    "/images/valvulas.webp"
+];
 export function Landing() {
     return (
         <div>
@@ -23,12 +30,11 @@ export function Landing() {
                     </Transition>
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold mb-4">Galería de Imágenes</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <img src="/logoValracol.webp" alt="Testetete"/>
-                            <img src="/logoValracol.webp" alt="Testetete"/>
-                            <img src="/logoValracol.webp" alt="Testetete"/>
+                        <div className="flex w-full h-64 sm:w-3/4 lg:w-full mx-auto"> {/* Make it take full width on large screens */}
+                            <CarouselComponent images={img}/>
                         </div>
                     </section>
+
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold mb-4">Estamos ubicados en:</h2>

@@ -33,7 +33,7 @@ export default function RootLayout({
         <head>
             <meta charSet="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <link rel="icon" href="/logoValracol.png"/>
+            <link rel="icon" href="/images/logoValracol.png"/>
             <title>Valracol - Página web</title>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>

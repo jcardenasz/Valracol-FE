@@ -21,7 +21,7 @@ const MapComponent: React.FC = () => {
 
         const iconStyle = new Style({
             image: new Icon({
-                src: '/location-pointer.png',
+                src: '/images/location-pointer.png',
                 scale: 0.046,
             }),
         });
