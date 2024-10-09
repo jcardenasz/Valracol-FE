@@ -1,5 +1,5 @@
 import { Footer, FooterCopyright, FooterDivider, FooterLink, FooterLinkGroup } from "flowbite-react";
-import SocialNetworks from "@/app/components/molecules/socialNetworks";
+import SocialNetworks from "@/app/components/molecules/socialNetworks/socialNetworks";
 import "./footer.css";
 import Image from "next/image"; // Import the CSS file
 

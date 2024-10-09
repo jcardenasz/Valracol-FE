@@ -1,9 +1,13 @@
 "use client"
-import React from "react";
-import Landing from "@/app/components/templates/Landing/Landing";
+import React, { lazy, Suspense } from "react";
+import Loading from "@/app/loading";
+
+const Landing = lazy(() => import("@/app/components/templates/Landing/Landing"));
 
 export default function Home() {
     return (
-        <Landing/>
+        <Suspense fallback={<Loading />}>
+            <Landing />
+        </Suspense>
     );
 }

@@ -7,7 +7,7 @@ export function NavbarComponent() {
     return (
         <Navbar className="navbar-sticky bg-gradient-to-r from-valracol-red to-valracol-dark">
             <NavbarBrand as={Link} href="/" className="transition ease-in-out hover:scale-110">
-                <Image src="/logoValracol.webp" className="mr-3 h-6 sm:h-9" alt="Logo Valracol" width={36} height={36} />                <span className="self-center whitespace-nowrap text-2xl font-bold dark:text-white">VALRACOL</span>
+                <Image src="/logoValracol.webp" className="mr-3 h-9 w-auto" alt="Logo Valracol" width={36} height={36} />                <span className="self-center whitespace-nowrap text-2xl font-bold dark:text-white">VALRACOL</span>
             </NavbarBrand>
             <NavbarToggle />
             <NavbarCollapse>

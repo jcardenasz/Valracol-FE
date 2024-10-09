@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialNetworkButton from "@/app/components/atoms/socialNetworkButton";
+import SocialNetworkButton from "@/app/components/atoms/socialNetwork/socialNetworkButton";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaSquareXTwitter } from "react-icons/fa6";
