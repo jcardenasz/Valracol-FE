@@ -25,12 +25,13 @@ export function Landing() {
                             <p className="text-lg">
                                 Valracol es una empresa Colombiana dedicada a proporcionar soluciones
                                 de alta calidad en el ámbito ferretero para la industria petrolera.
+                                Brindamos servicios generales de too tipo para generadores.
                             </p>
                         </section>
                     </Transition>
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold mb-4">Galería de Imágenes</h2>
-                        <div className="flex w-full h-64 sm:w-3/4 lg:w-full mx-auto"> {/* Make it take full width on large screens */}
+                        <div className="flex w-full h-full sm:w-3/4 lg:w-full mx-auto">
                             <CarouselComponent images={img}/>
                         </div>
                     </section>
@@ -39,7 +40,7 @@ export function Landing() {
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold mb-4">Estamos ubicados en:</h2>
                         <h2 className="text-xl font-regular mb-4">Carrera 19 #22-80 (Esquina) - Yopal, Casanare.</h2>
-                        <div className="w-full h-64 sm:mx-auto">
+                        <div className="w-full h-full sm:mx-auto">
                             <MapComponent />
                         </div>
                     </section>

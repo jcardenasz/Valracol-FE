@@ -1,3 +1,6 @@
+"use client";
+import CardComponent from "@/app/components/atoms/card/cardComponent";
+
 export default function products() {
     return (
         <div className="min-h-screen p-8 pb-20 sm:p-20 bg-white text-black">
@@ -7,6 +10,9 @@ export default function products() {
                 applications that help people. We are always looking for new ways to
                 improve our skills and learn new technologies.
             </p>
+                <div className="flex flex-wrap gap-4">
+                    <CardComponent />
+                </div>
         </div>
     )
 }
