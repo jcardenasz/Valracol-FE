@@ -7,15 +7,13 @@
     color: white;
     position: relative;
     transition: color 0.2s ease-in-out;
+    margin: 0 !important;
 }
 
 .FooterLink-text::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
     width: 100%;
-    height: 2px;
     background-color: #e76d6d;
     transform: scaleX(0);
     transform-origin: bottom right;

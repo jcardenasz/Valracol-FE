@@ -15,7 +15,7 @@ const img = [
 export function Landing() {
     return (
         <div>
-            <div className="min-h-screen p-8 pb-20 sm:p-20 bg-white text-black">
+            <div className="min-h-screen p-8 pb-20 sm:p-20 text-black">
                 <main className="flex flex-col gap-8 items-center sm:items-start">
                     <Transition to={"bottom"} className={"w-full"}>
                         <h1 className="text-2xl font-bold mb-4">¿Qué es Valracol?</h1>
@@ -25,7 +25,7 @@ export function Landing() {
                             <p className="text-lg">
                                 Valracol es una empresa Colombiana dedicada a proporcionar soluciones
                                 de alta calidad en el ámbito ferretero para la industria petrolera.
-                                Brindamos servicios generales de too tipo para generadores.
+                                Brindamos servicio a todo tipo de generadores.
                             </p>
                         </section>
                     </Transition>

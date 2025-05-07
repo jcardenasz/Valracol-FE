@@ -42,7 +42,7 @@ export default function RootLayout({
         <main className="flex-grow">
             <Suspense fallback={<Loading/>}>
                 {children}
-            </Suspense>
+            </Suspense> 
         </main>
         <FooterComponent/>
         </body>

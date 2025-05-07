@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx next dev -p 8000",
+    "dev": "npx next dev -p 3200",
     "build": "npx next build",
-    "start": "npx next start -p 8000",
+    "start": "npx next start -p 8010",
     "lint": "npx eslint ."
   },
   "dependencies": {
@@ -16,7 +16,7 @@
     "flowbite-react": "^0.10.1",
     "glob": "^9.3.5",
     "lru-cache": "^10.4.3",
-    "next": "14.2.12",
+    "next": "^15.3.2",
     "ol": "^10.2.1",
     "react": "^18",
     "react-dom": "^18",
