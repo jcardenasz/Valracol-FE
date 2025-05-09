@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root {/*
+    --background: #ffffff;
+    --foreground: #171717;*/
+    --background: #ffffff;
+    --foreground: #ededed;
+    --font-primary: Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/*@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}*/
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the body */
+    padding-top: 50px;
+    color: var(--foreground);
+    background-color: var(--background); /* Keep the background color */
+    font-family: var(--font-primary);
+    overflow-x: hidden; /* Prevent horizontal scrolling if needed */
+}
+
+body::before {
+    content: ""; /* Required for pseudo-elements */
+    position: fixed; /* Fixes the background image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/background-texture.jpg');
+    background-repeat: repeat;
+    background-size: 300px 300px; /* Adjust based on your pattern */
+    background-position: center;
+    opacity: 0.2; /* Set the opacity of the background image */
+    z-index: -1; /* Ensure it stays behind all content */
+    pointer-events: none; /* Prevent the pseudo-element from interfering with interactions */
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
