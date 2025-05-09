@@ -5,7 +5,7 @@
 :root {/*
     --background: #ffffff;
     --foreground: #171717;*/
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
     --font-primary: Helvetica, Arial, sans-serif;
 }
@@ -18,19 +18,28 @@
 }*/
 
 body {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the body */
     padding-top: 50px;
     color: var(--foreground);
-    /* BACKGROUND IMAGE */
-    background-color: var(--background);
+    background-color: var(--background); /* Keep the background color */
+    font-family: var(--font-primary);
+    overflow-x: hidden; /* Prevent horizontal scrolling if needed */
+}
+
+body::before {
+    content: ""; /* Required for pseudo-elements */
+    position: fixed; /* Fixes the background image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/images/background-texture.jpg');
     background-repeat: repeat;
-    background-size: 300px 300px; /* ajusta según tu patrón */
+    background-size: 300px 300px; /* Adjust based on your pattern */
     background-position: center;
-    background-attachment: fixed; /* opcional, para efecto parallax */
-    font-family: var(--font-primary);
-    opacity: 0.8;
-    /*background: var(--background);*/
-    /*font-family: Arial, Helvetica, sans-serif;*/
+    opacity: 0.2; /* Set the opacity of the background image */
+    z-index: -1; /* Ensure it stays behind all content */
+    pointer-events: none; /* Prevent the pseudo-element from interfering with interactions */
 }
 
 @layer utilities {
