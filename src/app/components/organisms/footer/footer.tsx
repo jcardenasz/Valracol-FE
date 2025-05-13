@@ -9,7 +9,7 @@ export function FooterComponent() {
             <div className=" w-full text-center">
                 <div className="h-full w-full flex justify-between items-center">
                     <div className="h-full flex-1 flex flex-col justify-center items-center transition ease-in-out hover:scale-110">
-                        <Image src={"/images/logoValracol.webp"} alt={"Logo Valracol"} className="h-16 sm:h-20" width={85} height={50}/>
+                        <Image src={"/images/logoValracol.webp"} alt={"Logo Valracol"} className="h-16 sm:h-20" width={75} height={50}/>
                         <span className="self-center whitespace-nowrap text-lg sm:text-2xl font-bold dark:text-white">VALRACOL</span>
                     </div>
                     <div className="vl"/> {/* Vertical line */}
