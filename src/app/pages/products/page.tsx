@@ -2,14 +2,13 @@
 import CardComponent from "@/app/components/atoms/card/cardComponent";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { useState, useEffect } from "react";
-import { Key } from "react";
 
 export default function products() {
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
 
     const fetchItems = async () => {
-        const response = await fetch(`https://dummyjson.com/products?limit=100`);
+        const response = await fetch(`https://dummyjson.com/products?limit=50`);
         const data = await response.json();
         if(data.products && data.products.length>0){
             setProducts(data.products);
@@ -40,8 +39,8 @@ export default function products() {
                 />
             </div>
             <div>
+                <h1 className="flex items-center justify-center text-base font-semibold text-gray-800">Todos los productos</h1>
                 <hr className="my-4 border-gray-300"/>
-                <h1>Todos los productos</h1>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-4 items-center justify-center">
                 {products.length &&
