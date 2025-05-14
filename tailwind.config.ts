@@ -22,6 +22,15 @@ const config: Config = {
                 'valracol-footer-red': '#441010',
                 'valracol-letter-hover': '#e76d6d'
             },
+            keyframes: {
+                glow: {
+                '0%, 100%': { color: '#ffffff', textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000' },
+                '50%': { color: '#ff0000', textShadow: '0 0 20px #000, 0 0 40px #000' },
+                },
+            },
+            animation: {
+                'glow-red-black': 'glow 1.5s ease-in-out infinite',
+            },
         },
     },
     plugins: [
