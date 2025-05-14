@@ -13,7 +13,7 @@ export function NavbarComponent() {
             <NavbarToggle />
             <NavbarCollapse>
                 <NavbarLink className="navbar-link_text text-lg sm:text-sm mr-2" href="#">Quiénes somos</NavbarLink>
-                <NavbarLink className="navbar-link_text text-lg sm:text-sm mr-2" href="#">Productos</NavbarLink>
+                <NavbarLink className="navbar-link_text text-lg sm:text-sm mr-2" href="/pages/products">Productos</NavbarLink>
                 <NavbarLink className="navbar-link_text text-lg sm:text-sm mr-2" href="#">Cotizaciones</NavbarLink>
             </NavbarCollapse>
         </Navbar>
