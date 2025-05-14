@@ -24,8 +24,8 @@ const config: Config = {
             },
             keyframes: {
                 glow: {
-                '0%, 100%': { color: '#ffffff', textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000' },
-                '50%': { color: '#ff0000', textShadow: '0 0 20px #000, 0 0 40px #000' },
+                    '0%, 100%': { color: '#000000', textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000' },
+                    '50%': { color: '#ffffff', textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000' },
                 },
             },
             animation: {
