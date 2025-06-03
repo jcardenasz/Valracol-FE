@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx next dev -p 3200",
-    "build": "npx next build",
-    "start": "npx next start -p 8010",
-    "lint": "npx eslint ."
+    "dev": "bun next dev -p 3200",
+    "build": "bun next build",
+    "start": "bun next start -p 8010",
+    "lint": "bun eslint ."
   },
   "dependencies": {
     "@eslint/config-array": "^0.18.0",
