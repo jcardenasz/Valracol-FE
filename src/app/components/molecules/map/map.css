@@ -1,13 +1,9 @@
 .map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* This centers the map both horizontally and vertically */
-    width: 87vw; /* Full width of the viewport */
-    height: 43vh; /* Full height of the viewport */
-    margin-bottom: 2em;
-}
-
-.map {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
+    position: relative;
+    width: auto;
+    max-width: 800px;
+    margin: 0 auto;       
+    padding-bottom: 56.25%; 
+    overflow: hidden;
+    display: block;         
 }
